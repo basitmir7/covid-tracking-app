@@ -3,7 +3,7 @@ import "./Cards.modules.css";
 import CountUp from "react-countup";
 
 const Cards = ({ data }) => {
-  console.log(data);
+  // console.log(data);
   const confirmed = data.confirmed;
   const lastUpdate = data.lastUpdate;
   const recovered = data.recovered;
@@ -11,9 +11,9 @@ const Cards = ({ data }) => {
   if (!data.confirmed) return "loading...";
   else {
     return (
-      <div className="container">
+      <div className="container-card">
         <Grid container spacing={3} justifyContent="center">
-          <Grid item component={Card}>
+          <Grid item component={Card} style={{ margin: "20px" }}>
             <CardContent>
               <Typography color="textSecondary" gutterBottom>
                 Infected
@@ -33,7 +33,7 @@ const Cards = ({ data }) => {
               <Typography variant="body2">Number of active cases </Typography>
             </CardContent>
           </Grid>
-          <Grid item component={Card}>
+          <Grid item component={Card} style={{ margin: "20px" }}>
             <CardContent>
               <Typography color="textSecondary" gutterBottom>
                 Recoverd
@@ -53,7 +53,7 @@ const Cards = ({ data }) => {
               </Typography>
             </CardContent>
           </Grid>
-          <Grid item component={Card}>
+          <Grid item component={Card} style={{ margin: "20px" }}>
             <CardContent>
               <Typography color="textSecondary" gutterBottom>
                 Deaths

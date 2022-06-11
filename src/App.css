@@ -5,4 +5,13 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+}
+.charts {
+  display: flex;
+  justify-content: center;
+  width: 85%;
+}
+.card-item {
+  margin: 20px;
 }
