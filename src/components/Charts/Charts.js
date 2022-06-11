@@ -3,7 +3,7 @@ import { fetchDailyData } from "../../api";
 import { Line, Bar } from "react-chartjs-2";
 import Chart from "chart.js/auto";
 
-const Charts = () => {
+const Charts = ({ data: { confirmed, deaths, recovered }, country }) => {
   const [dailyData, setDailyData] = useState([]);
 
   useEffect(() => {
@@ -36,7 +36,30 @@ const Charts = () => {
     />
   ) : null;
 
-  return <div className="charts">{lineChart}</div>;
+  const barChart = confirmed ? (
+    <Bar
+      data={{
+        labels: ["Infected", "Recovered", "Deaths"],
+        datasets: [
+          {
+            label: "people",
+            backgroundColor: [
+              "rgba(0,0,255,0.5)",
+              "rgba(0,255,0,0.5)",
+              "rgba(255,0,0,0.5)",
+            ],
+            data: [confirmed.value, recovered.value, deaths.value],
+          },
+        ],
+      }}
+      options={{
+        legend: { display: false },
+        title: { display: true, text: `current state in ${country}` },
+      }}
+    />
+  ) : null;
+
+  return <div className="charts">{country ? barChart : lineChart}</div>;
 };
 
 export default Charts;
