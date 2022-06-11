@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import { fetchData } from "./api";
+import covidlogo from "./assets/covidlogo.png";
 
 import { Cards, Charts, CountryPicker } from "./components/files";
 
@@ -26,6 +27,15 @@ class App extends React.Component {
 
     return (
       <div className="container">
+        <div className="header">
+          <h1>
+            C
+            <span>
+              <img src={covidlogo} />
+            </span>
+            VID REPORTS
+          </h1>
+        </div>
         <Cards data={data} />
         <CountryPicker handleCountryChange={this.handleCountryChange} />
         <Charts data={data} country={country} />

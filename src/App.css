@@ -11,7 +11,21 @@ body {
   display: flex;
   justify-content: center;
   width: 85%;
+  margin-top: 25px;
 }
 .card-item {
   margin: 20px;
+}
+.header h1 span img {
+  height: 35px;
+  width: 35px;
+  margin-bottom: -6px;
+}
+.container-card {
+  margin: 50px 0;
+}
+.confirmed,
+.recovered,
+.deaths {
+  background: red;
 }
