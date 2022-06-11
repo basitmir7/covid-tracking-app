@@ -3,11 +3,11 @@ import { Card, CardContent, Typography, Grid } from "@material-ui/core";
 import CountUp from "react-countup";
 
 const Cards = ({ data }) => {
-  // console.log(data);
   const confirmed = data.confirmed;
   const lastUpdate = data.lastUpdate;
   const recovered = data.recovered;
   const deaths = data.deaths;
+
   if (!data.confirmed) return "loading...";
   else {
     return (

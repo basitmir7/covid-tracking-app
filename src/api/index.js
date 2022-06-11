@@ -1,5 +1,5 @@
 import axios from "axios";
-// import { useEffect, useState } from "react";
+
 const url = "https://covid19.mathdro.id/api";
 
 export const fetchData = async (country) => {
@@ -23,14 +23,7 @@ export const fetchData = async (country) => {
     console.log(error);
   }
 };
-// export const fetchData = async () => {
-//   try {
-//     let res = await fetch(url);
-//     return res.json();
-//   } catch (error) {
-//     console.log(error);
-//   }
-// };
+
 export const fetchDailyData = async () => {
   try {
     const { data } = await axios.get(`${url}/daily`);
