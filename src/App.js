@@ -5,14 +5,21 @@ import { fetchData } from "./api";
 import { Cards, Charts, CountryPicker } from "./components/files";
 
 class App extends React.Component {
+  state = {
+    data: {},
+  };
+
   async componentDidMount() {
     const data = await fetchData();
-    console.log(data);
+    this.setState({ data });
   }
+
   render() {
+    const data = this.state.data;
+
     return (
-      <div className="App">
-        <Cards />
+      <div className="container">
+        <Cards data={data} />
         <CountryPicker />
         <Charts />
       </div>
